@@ -1,0 +1,247 @@
+/* header
+------------------------- */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	height: 80px;
+	padding: 10px 0;
+	background-color: $color_white;
+	box-shadow: 0 8px 8px -8px $color_base;
+	box-sizing: border-box;
+	@include mq (lg) {
+		padding: 5px 0;
+	}
+
+	&_inner {
+		padding: 0 4vw;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include mq (xl) {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+	}
+
+	// ロゴ
+	&_logo_area {
+		width:160px;
+		height: 60px;
+		@include mq (lg) {
+			width: 200px;
+			height: 70px;
+		}
+	}
+	&_logo {
+			width: 100%;
+			height: 100%;
+		}
+
+	// メニューアイコン
+	&_menu {
+		position: absolute;
+		right: 4%;
+		z-index: 111;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 10px;
+		@include mq (pc) {
+			display: none;
+		}	
+
+		&_txt {
+			font-size: rem(12);
+		}
+	}
+	
+	// ハンバーガーアイコン
+	&_toggle {
+		margin-right: 5px;
+
+		// メニュー - CLOSE時
+		&_icon {
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 2px;
+			background-color: $color_base;
+			transition: .2s;
+			&:nth-child(1) {
+				top: 0;
+			}
+			&:nth-child(2) {
+				margin: 5px 0;
+			}
+			&:nth-child(3) {
+				top: 0;
+			}
+		}
+
+		// メニュー - OPEN時
+		&.open &_icon:nth-child(1) {
+			top: 7px;
+			transform: rotate(45deg);
+			transition: .2s;
+		}
+		&.open &_icon:nth-child(2) {
+			opacity: 0;
+			transition: .2s;
+		}
+		&.open &_icon:nth-child(3) {
+			top: -7px;
+			transform: rotate(-45deg);
+			transition: .2s;
+		}
+	}
+
+
+	// ナビゲーション
+	&_nav {
+		@include mq (sp) {
+			&_bg {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 99;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(51, 51, 51, .7);
+				transition: .2s;
+				&.open {
+					display: block;
+					transition: .2s;
+				}
+			}
+		}
+
+		&_list {
+			text-align: center;
+			@include mq (sp) {
+				padding-top: 110px;
+				position: fixed;
+				top: 0;
+				right: 0;
+				z-index: 100;
+				width: 270px;
+				height: 100%;
+				transform: translateX(100%);
+				background-color: $color_white;
+				box-shadow: 8px 0 8px $color_base;
+				transition: .2s;
+				&.open {
+					transform: translateX(0);
+					transition: .2s;
+				}
+			}
+
+			@include mq (pc) {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		&_item {
+			margin-bottom: 13%;
+			@include mq (pc) {
+				margin-left: 20px;
+				margin-bottom: 0;
+			}
+			@include mq (xl) {
+				margin-left: 30px;
+			}
+		}
+
+		&_link {
+			position: relative;
+			color: $color_base;
+			font-size: rem(16);
+			font-weight: bold;
+			transition: .2s;
+			@include mq (sp) {
+				&::after {
+					position: absolute;
+					bottom: -5px;
+					left: 0;
+					right: 0;
+					content: '';
+					display: inline-block;
+					width: 100%;
+					height: 1px;
+					background-color: $color_base;
+				}
+			}
+			@include mq (pc) {
+				font-size: rem(14);
+			}
+			@include mq (md) {
+				font-size: rem(12);
+			}
+			@include mq (lg) {
+				&::after {
+					position: absolute;
+	  				bottom: .3em;
+	  				left: 0;
+	  				content: '';
+	  				width: 100%;
+	  				height: 1px;
+	  				background-color: $color_main;
+	  				opacity: 0;
+	  				transition: .2s;
+  				}
+  				&:hover {
+  					color: $color_main;
+  				}
+  				&:hover::after {
+  					bottom: -5px;
+  					opacity: 1;
+  				}
+			}
+		}
+
+		// ボタン
+		&_btn {
+			padding: 12px 18px;
+			border: 2px solid $color_main;
+			border-radius: 50px;
+			background-color: $color_main;
+			transition: background-color .4s;
+			@include mq (sp) {
+				display: inline-block;
+			}
+			@include mq (md) {
+				padding: 4px 12px;
+				line-height: 1.2;
+			}
+			@include mq (lg) {
+				padding: 5px 18px;
+				line-height: 1.4;
+				&:hover {
+					background-color: #fff;
+					cursor: pointer;
+					transition: background-color .4s;
+					.link_btn {
+					color: $color_main;
+					transition: color .4s;	
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

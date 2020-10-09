@@ -1,0 +1,142 @@
+/* feature
+------------------------- */
+.feature {
+	position: relative;
+	background: $color_gray;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include mq (pc) {
+		padding: 0;
+		background: $color_white;
+		&::before {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			content: '';
+			width: 86%;
+			height: 80%;
+			background: $color_gray;
+		}
+	}
+
+	&_list {
+		@include mq (pc) {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+	}
+
+	&_item {
+		border: 1px solid $color_feature_border;
+		width: 86%;
+		margin: 0 auto 50px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		@include mq (sm) {
+			width: 64%;
+		}
+		@include mq (pc) {
+			position: relative;
+			display: flex;
+			width: 80%;
+			margin: 0;			
+			@include mq (xl) {
+				width: 74%;
+				height: 360px;
+			}
+
+			&.right {
+				flex-direction: row-reverse;
+				margin: 5% 0 5% auto;
+			}
+		}
+
+		// 画像
+		&_img_area {
+			@include mq (sm) {
+				height: 240px;
+			}
+			@include mq (pc) {
+				width: 50%;
+				height: 100%;
+			}
+			@include mq (xl) {
+				width: 55%;
+			}
+		}
+		&_img {
+			width: 100%;
+			height: 100%;
+		}
+
+		// テキストエリア
+		&_body {
+			position: relative;
+			padding: 30px 20px;
+			text-align: center;
+			background: $color_white;
+			box-sizing: border-box;
+			@include mq () {
+				width: 50%;
+			}
+		}
+
+		// ナンバー
+		&_number {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 90;
+			padding: 2px 15px;
+			background: $color_base;
+			color: $color_white;
+			font-size: rem(24);
+			font-family: $font_en;
+			font-weight: bold;
+			font-style: italic;
+			@include mq (lg) {
+				font-size: rem(32);
+				padding: 2px 20px;
+			}
+			@include mq (xl) {
+				font-size: rem(42);
+				padding: 2px 25px;
+			}
+		}
+
+		&_txt_area {
+			@include mq (pc) {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				transform: translateY(-50%);
+			}
+		}
+
+		&_heading {
+			font-size: rem(18);
+			font-weight: bold;
+			margin-bottom: 10px;
+			@include mq (lg) {
+				font-size: rem(24);
+			}
+			@include mq (xl) {
+				font-size: rem(28);
+				margin-bottom: 20px;
+			}
+		}
+
+		&_txt {
+			font-size: rem(12);
+			@include mq (lg) {
+				font-size: rem(16);
+			}
+			@include mq (xl) {
+				font-size: rem(20);
+			}
+		}
+	}
+}

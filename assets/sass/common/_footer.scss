@@ -1,0 +1,29 @@
+/* footer
+------------------------- */
+.footer {
+	padding-top: 80px;
+
+	// フッターロゴ
+	&_logo_area {
+		max-width: 100%;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	&_logo {
+		width: 200px;
+		height: 80px;
+		@include mq (pc) {
+			width: 240px;
+		}
+	}
+
+	// コピーライト
+	&_copyright {
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: rem(12);
+		@include mq (lg) {
+			font-size: rem(14);
+		}
+	}
+}

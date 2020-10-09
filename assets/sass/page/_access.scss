@@ -1,0 +1,67 @@
+/* access
+------------------------- */
+.access {
+	&_list {
+		width: 90%;
+		margin: 0 auto 50px;
+		@include mq (pc) {
+			width: 64%;
+			margin-bottom: 80px;
+		}
+		@include mq (lg) {
+			width: 60%;
+		}
+		@include mq (xl) {
+			width: 40%;
+		}
+	}
+
+	&_item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 30px;
+		padding-bottom: 3px;
+		border-bottom: 1px solid $color_base;
+		@include mq (pc) {
+			margin-bottom: 40px;
+			padding-bottom: 5px;
+		}
+
+		// タイトル
+		&_ttl {
+			width: 40%;
+			padding-left: 10px;
+			font-weight: bold;
+			box-sizing: border-box;
+			@include mq (pc) {
+				padding-left: 20px;
+				font-size: rem(20);
+			}
+			@include mq (md) {
+				font-size: rem(18);
+			}
+		}
+
+		// テキスト
+		&_txt {
+			@include mq (pc) {
+				font-size: rem(20);
+			}
+			@include mq (md) {
+				font-size: rem(18);
+			}
+		}
+	}
+
+	// Google Map
+	&_map {
+		height: 270px;
+		width: 100%;
+		@include mq (pc) {
+			height: 320px;
+		}
+		@include mq (xl) {
+			height: 360px;
+		}
+	}
+}

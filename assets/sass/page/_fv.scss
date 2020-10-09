@@ -1,0 +1,76 @@
+/* fv
+------------------------- */
+.fv {
+	position: relative;
+	margin-bottom: 60px;
+	@include mq (pc) {
+		margin-bottom: 80px;
+	}
+
+	// fvの背景
+	&_bg {
+		min-height: 100vh;
+		background: url(../../img/sp/fv-sp.jpg) 20% 50px / cover no-repeat;
+		background-attachment: fixed;
+		opacity: .8;
+		@include mq (pc) {
+			min-height: 700px;
+			margin-top: 80px;
+			background: url(../../img/fv-pc.jpg) center / cover no-repeat;
+			clip-path: polygon(100% 0, 100% 80%, 0 100%, 0 0);
+		}
+		@include mq (xl) {
+			min-height: 100vh;
+			margin-top: 0;
+			background-position: 0 10px;
+		}
+	}
+
+	// キャッチコピー
+	&_catchcopy {
+		position: absolute;
+		top: 50%;
+		z-index: 90;
+		@include mq (sp) {
+			left: 5%;
+		}
+		@include mq (sm) {
+			top: 40%;
+		}
+		@include mq (pc) {
+			top: 32%;
+			right: 7%;
+		}
+		@include mq (xl) {
+			top: 40%;
+			right: 11%;
+		}
+
+		&_txt {
+			margin-bottom: 24px;
+			padding: 5px 10px;
+			width: 70%;
+			font-size: rem(24);
+			font-weight: bold;
+			background-color: $color_catchcopy_bg;
+			@include mq (sm) {
+				margin-bottom: 15px;
+			}
+			@include mq (pc) {
+				padding: 8px 18px; 
+				font-size: rem(32);
+			}
+			@include mq (md) {
+				font-size: rem(28);
+			}
+
+			// キャッチコピー - 英語
+			&.txt_en {
+				width: 100%;
+				letter-spacing: .1em;
+				font-family: $font_en;
+				font-style: italic;
+			}
+		}
+	}
+}

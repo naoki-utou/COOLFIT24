@@ -1,0 +1,135 @@
+/* impression
+------------------------- */
+.impression {
+	position: relative;
+	padding: 50px 4vw;
+	background: linear-gradient($color_impression_bg_top, $color_impression_bg_bottom);
+	box-sizing: border-box;
+	@include mq (sp) {
+		background-blend-mode: luminosity;
+	}
+	@include mq (md) {
+		background-blend-mode: luminosity;
+	}
+	@include mq (lg) {
+		height: 860px;
+		background: $color_gray url(../../img/impression.jpg) 32% 10% / cover no-repeat;
+	}
+
+	&_body {
+		@include mq (md) {
+			margin-left: 8%;
+		}
+		@include mq (lg) {
+			position: absolute;
+			top: 8%;
+			right: 4%;
+			width: 48%;
+		}
+	}
+
+	// 見出し
+	&_heading {
+		margin-left: 10px;
+		margin-bottom: 40px;
+		font-size: rem(20);
+		font-weight: bold;
+		@include mq (pc) {
+			margin-left: 0;
+			margin-bottom: 60px;
+			font-size: rem(32);
+		}
+		@include mq (xl) {
+			font-size: rem(38);
+		}
+		&_emphasis {
+			padding-right: 5px;
+			font-size: rem(42);
+			color: $color_emphasis;
+			@include mq (pc) {
+				font-size: rem(64);
+			}
+		}
+	}
+
+	&_item {
+		display: flex;
+		margin-bottom: 30px;
+
+		// チェックマークアイコン
+		.i_size {
+			font-size: 20px;
+			@include mq (pc) {
+				font-size: 30px;
+			}
+		}
+		.i_emphasis {
+			color: $color_emphasis;
+		}
+		.i_layout {
+			margin-top: 8px;
+			margin-right: 10px;
+			@include mq (md) {
+				margin-top: 4px;
+			}
+			@include mq (lg) {
+				margin-right: 16px;
+			}
+			@include mq (xl) {
+				margin-top: 10px;
+			}
+		}
+
+		// テキスト
+		&_txt {
+			font-size: rem(16);
+			font-weight: bold;
+			@include mq (lg) {
+				font-size: rem(20);
+			}
+			@include mq (xl) {
+				font-size: rem(24);
+			}
+		}
+		&_emphasis {
+			margin: 5px;
+			padding: 2px 2px 2px 5px;
+			font-size: rem(18);
+			background: $color_impression_emphasis;
+			@include mq (lg) {
+				font-size: rem(24);
+			}
+			@include mq (xl) {
+				font-size: rem(28);
+			}
+		}
+		&_age {
+			text-align: right;
+			font-size: rem(12);
+			font-weight: bold;
+			@include mq (lg) {
+				margin-top: 5px;
+				font-size: rem(16);
+			}
+			@include mq (xl) {
+				font-size: rem(18);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
